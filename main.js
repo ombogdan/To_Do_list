@@ -5,9 +5,9 @@ list.addEventListener('click', function (ev) {
         ev.target.classList.toggle('checked');
     } else if (ev.target.tagName === "SPAN") {
         var div = ev.target.parentNode;
+        div.remove();
     }
 }, false);
-
 
 button = document.querySelector("span");
 button.addEventListener("click", function () {
@@ -37,7 +37,6 @@ button.addEventListener("click", function () {
 
 window.onload = function () {
     document.getElementById('list').innerHTML =  localStorage.getItem('list');
-
 
     document.getElementById('input').onkeypress = function searchKeyPress(event) {
         if (event.keyCode === 13) {
